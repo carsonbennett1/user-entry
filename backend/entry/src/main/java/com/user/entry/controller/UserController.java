@@ -1,6 +1,7 @@
 package com.user.entry.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,8 +18,9 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    public UserModel createUser(@RequestBody UserModel user){
-        return userService.saveUser(user);
+    public ResponseEntity<UserModel> createUser(@RequestBody UserModel user){
+        userService.saveUser(user);
+        return ResponseEntity.ok(user);
     }
     
 }
