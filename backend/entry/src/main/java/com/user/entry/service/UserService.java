@@ -21,5 +21,9 @@ public class UserService {
     public List<UserModel> getAllUsers(){
         return userRepository.findAll();
     }
+
+    public boolean nameExists(String name) {
+        return userRepository.findByName(name).isPresent();
+    }
     
 }
