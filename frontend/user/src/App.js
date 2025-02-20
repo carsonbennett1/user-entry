@@ -7,7 +7,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-      <Route path="/form" element={<UserEntry />} /> {/* Updated to use 'element' */}
+      <Route path="/" element={<UserEntry />} /> {/* Updated to use 'element' */}
       {/* You can define other routes here */}
       </Routes>
     </Router>
